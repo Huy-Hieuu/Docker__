@@ -1,0 +1,16 @@
+version: "3"
+services:
+  client:
+    build: ./client
+    ports:
+      - 8078:80
+    volumes:
+      - ./client:/movie_app
+    depends_on:
+      - server
+  server:
+    build: ./server
+    ports:
+      - 8079:8001
+    volumes:
+      - ./server:/movie_server

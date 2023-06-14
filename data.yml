@@ -1,0 +1,10 @@
+name: "ABC"
+price: 149
+is_published: true
+tags:
+  - software
+  - devops
+author:
+  first_name: Mosh
+  last_name: HH
+# often use for configuration
