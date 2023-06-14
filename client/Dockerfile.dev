@@ -1,0 +1,26 @@
+FROM node:18-alpine as development
+# Setting up the work directory
+WORKDIR /movie_app
+# Copy and Installing dependencies
+COPY ./package.json /movie_app
+RUN npm install
+# Copying all the files in our project
+COPY . .
+#Starting our application
+CMD npm start
+
+# -f: Path to the docker file
+# -t: Name and tag for the image
+# . : Context for the build process
+
+# create a docker image by using the docker build command
+# docker build -f Dockerfile.dev -t <name:tag> .
+
+# create a docker container by running 
+# docker run -d -it –rm -p [host_port]:[container_port] –name [container_name] [image_id/image_tag]
+
+# -d: Run container in background and print container ID
+# -it: Create an interactive container
+# -p: Map host port to container port
+# –name: Assign a name to the container
+# –rm: Automatically remove the container when it exits.
