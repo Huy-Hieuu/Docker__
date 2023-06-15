@@ -19,12 +19,4 @@ RUN npm run build-src
 
 CMD ["npm", "run", "build"]
 
-# # Final image
-# FROM nginx:1.21-alpine
-
-# # Copy built application
-# COPY --from=builder /movie_server/build /usr/share/nginx/html
-
-# # Copy NGINX configuration
-# COPY nginx.conf /etc/nginx/conf.d/default.conf
 
